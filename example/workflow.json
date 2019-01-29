@@ -1,0 +1,227 @@
+{
+  "processes": [
+    {
+      "name": "generateData",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "generateData.js",
+          "args": []
+        }
+      },
+      "ins": [
+        0
+      ],
+      "outs": [
+        1
+      ]
+    },
+    {
+      "name": "create_dat_0",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "createDat.js",
+          "args": [
+            "0.dat"
+          ]
+        }
+      },
+      "ins": [
+        1
+      ],
+      "outs": [
+        2
+      ]
+    },
+    {
+      "name": "create_dat_1",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "createDat.js",
+          "args": [
+            "1.dat"
+          ]
+        }
+      },
+      "ins": [
+        1
+      ],
+      "outs": [
+        3
+      ]
+    },
+    {
+      "name": "create_dat_2",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "createDat.js",
+          "args": [
+            "2.dat"
+          ]
+        }
+      },
+      "ins": [
+        1
+      ],
+      "outs": [
+        4
+      ]
+    },
+    {
+      "name": "create_dat_3",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "createDat.js",
+          "args": [
+            "3.dat"
+          ]
+        }
+      },
+      "ins": [
+        1
+      ],
+      "outs": [
+        5
+      ]
+    },
+    {
+      "name": "average_result_0",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "mean-pack-ell",
+          "args": [
+            "average_0.txt"
+          ]
+        }
+      },
+      "ins": [],
+      "outs": [
+        6
+      ]
+    },
+    {
+      "name": "average_result_1",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "mean-pack-ell",
+          "args": [
+            "average_1.txt"
+          ]
+        }
+      },
+      "ins": [],
+      "outs": [
+        7
+      ]
+    },
+    {
+      "name": "average_result_2",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "mean-pack-ell",
+          "args": [
+            "average_2.txt"
+          ]
+        }
+      },
+      "ins": [],
+      "outs": [
+        8
+      ]
+    },
+    {
+      "name": "average_result_3",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "mean-pack-ell",
+          "args": [
+            "average_3.txt"
+          ]
+        }
+      },
+      "ins": [],
+      "outs": [
+        9
+      ]
+    },
+    {
+      "name": "summary",
+      "function": "RESTServiceCommand",
+      "type": "dataflow",
+      "config": {
+        "executor": {
+          "executable": "summary.js",
+          "args": []
+        }
+      },
+      "ins": [
+        1,
+        9,
+        8,
+        7,
+        6
+      ],
+      "outs": [
+        10
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "name": "generateData.js"
+    },
+    {
+      "name": "data.json"
+    },
+    {
+      "name": "0.dat"
+    },
+    {
+      "name": "1.dat"
+    },
+    {
+      "name": "2.dat"
+    },
+    {
+      "name": "3.dat"
+    },
+    {
+      "name": "average_0.txt"
+    },
+    {
+      "name": "average_1.txt"
+    },
+    {
+      "name": "average_2.txt"
+    },
+    {
+      "name": "average_3.txt"
+    },
+    {
+      "name": "summary.csv"
+    }
+  ],
+  "ins": [
+    0
+  ],
+  "outs": [
+    10
+  ]
+}
