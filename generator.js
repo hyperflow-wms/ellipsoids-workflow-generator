@@ -27,6 +27,7 @@ function createTask(name, functionName, executable, args, ins, outs) {
         "name": name,
         "function": functionName,
         "type": "dataflow",
+		"firingLimit": 1,
         "config": {
             "executor": {
                 "executable": executable,
